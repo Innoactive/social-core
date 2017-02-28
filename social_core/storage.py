@@ -57,6 +57,7 @@ class UserMixin(object):
                                             self.uid,
                                             response,
                                             self.extra_data)
+            extra_data['auth_time'] = int(time.time())
             if self.set_extra_data(extra_data):
                 self.save()
 
